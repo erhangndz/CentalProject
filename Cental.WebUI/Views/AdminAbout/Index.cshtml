@@ -1,0 +1,28 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Hakkımızda</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Vizyon</th>
+        <th>Misyon</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AboutId</td>
+            <td>@item.Vision</td>
+            <td>@item.Mission</td>
+            <td><a href="#" class="btn btn-danger">Sil</a> </td>
+            <td><a href="#" class="btn btn-info">Güncelle</a> </td>
+        </tr>
+    }
+</table>
+
+<a href="#" class="btn btn-primary">Yeni Hakkımızda Ekle</a>
