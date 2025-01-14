@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Cental.EntityLayer.Entities
 {
-    public class Process: BaseEntity
+    public abstract class BaseEntity
     {
-        public int ProcessId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+       
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cental.EntityLayer.Entities
 {
-    public class Brand
+    public class Brand: BaseEntity
     {
         public int BrandId { get; set; }
         public string BrandName { get; set; }

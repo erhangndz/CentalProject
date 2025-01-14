@@ -1,5 +1,6 @@
 ﻿using Cental.DataAccessLayer.Abstract;
 using Cental.DataAccessLayer.Context;
+using Cental.EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Cental.DataAccessLayer.Repositories
 {
-    public class GenericRepository<T> : IGenericDal<T> where T : class
+    public class GenericRepository<T> : IGenericDal<T> where T : BaseEntity
     {
-        private readonly CentalContext _context;
+        protected readonly CentalContext _context;
 
         public GenericRepository(CentalContext context)
         {

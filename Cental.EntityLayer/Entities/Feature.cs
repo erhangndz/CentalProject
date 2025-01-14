@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cental.EntityLayer.Entities
 {
-    public class Feature
+    public class Feature: BaseEntity
     {
         public int FeatureId { get; set; }
         public string Title { get; set; }

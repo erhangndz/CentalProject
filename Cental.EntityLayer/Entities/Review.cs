@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cental.EntityLayer.Entities
 {
-    public class Review
+    public class Review: BaseEntity
     {
         public int ReviewId { get; set; }
         public int Rating { get; set; }
