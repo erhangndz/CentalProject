@@ -16,6 +16,9 @@ namespace Cental.DataAccessLayer.Concrete
         {
         }
 
-        
+        public List<About> GetActiveAbouts()
+        {
+           return _context.Abouts.Where(x => x.AboutId == 1).ToList();
+        }
     }
 }

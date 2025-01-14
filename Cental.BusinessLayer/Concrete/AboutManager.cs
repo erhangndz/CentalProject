@@ -11,8 +11,15 @@ namespace Cental.BusinessLayer.Concrete
 {
     public class AboutManager : GenericManager<About>, IAboutService
     {
-        public AboutManager(IGenericDal<About> genericDal) : base(genericDal)
+        private readonly IAboutDal _aboutDal;
+        public AboutManager(IGenericDal<About> genericDal, IAboutDal aboutDal) : base(genericDal)
         {
+            _aboutDal = aboutDal;
+        }
+
+        public List<About> TGetActiveAbouts()
+        {
+           return _aboutDal.GetActiveAbouts();
         }
     }
 }

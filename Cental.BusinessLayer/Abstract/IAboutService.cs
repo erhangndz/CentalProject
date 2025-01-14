@@ -9,5 +9,6 @@ namespace Cental.BusinessLayer.Abstract
 {
     public interface IAboutService: IGenericService<About>
     {
+        public List<About> TGetActiveAbouts();
     }
 }

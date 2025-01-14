@@ -9,6 +9,6 @@ namespace Cental.DataAccessLayer.Abstract
 {
     public interface IAboutDal : IGenericDal<About>
     {
-       
+        List<About> GetActiveAbouts();
     }
 }

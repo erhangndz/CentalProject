@@ -21,6 +21,8 @@ namespace Cental.WebUI.Controllers
         {
            var values = _aboutService.TGetAll();
 
+            var values2 = _aboutService.TGetActiveAbouts();
+
             var result = values.Select(about => new ResultAboutDto
             {
                 AboutId=about.AboutId,
