@@ -1,4 +1,5 @@
-﻿using Cental.EntityLayer.Entities;
+﻿using Cental.DtoLayer.BannerDtos;
+using Cental.EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

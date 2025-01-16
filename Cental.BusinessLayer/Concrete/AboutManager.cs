@@ -9,17 +9,38 @@ using System.Threading.Tasks;
 
 namespace Cental.BusinessLayer.Concrete
 {
-    public class AboutManager : GenericManager<About>, IAboutService
-    {
-        private readonly IAboutDal _aboutDal;
-        public AboutManager(IGenericDal<About> genericDal, IAboutDal aboutDal) : base(genericDal)
-        {
-            _aboutDal = aboutDal;
-        }
+	public class AboutManager : IAboutService
+	{
+		private readonly IAboutDal _aboutDal;
 
-        public List<About> TGetActiveAbouts()
-        {
-           return _aboutDal.GetActiveAbouts();
-        }
-    }
+		public AboutManager(IAboutDal aboutDal)
+		{
+			_aboutDal = aboutDal;
+		}
+
+		public void TCreate(About entity)
+		{
+			_aboutDal.Create(entity);
+		}
+
+		public void TDelete(int id)
+		{
+			_aboutDal.Delete(id);
+		}
+
+		public List<About> TGetAll()
+		{
+			return _aboutDal.GetAll();
+		}
+
+		public About TGetById(int id)
+		{
+			return _aboutDal.GetById(id);
+		}
+
+		public void TUpdate(About entity)
+		{
+			_aboutDal.Update(entity);
+		}
+	}
 }
