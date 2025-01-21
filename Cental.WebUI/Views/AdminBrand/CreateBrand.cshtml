@@ -1,0 +1,15 @@
+﻿@model Brand
+@{
+    ViewData["Title"] = "Yeni Marka Oluştur";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <label>Marka Adı</label>
+    <input type="text" asp-for="BrandName" class="form-control" />
+    <span asp-validation-for="BrandName" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary"> <i class="fa fa-save"></i> Kaydet</button>
+</form>
+
+ 

@@ -17,6 +17,9 @@ namespace Cental.DataAccessLayer.Context
             optionsBuilder.UseSqlServer("server=ERHAN\\SQLEXPRESS;database=CentalDb;integrated security=true;trustServerCertificate=true");
         }
 
+
+      
+
         public DbSet<About> Abouts { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Brand> Brands { get; set; }
