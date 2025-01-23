@@ -1,0 +1,64 @@
+﻿
+@model CreateCarDto
+@{
+    ViewData["Title"] = "Yeni Araba Oluştur";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+
+<form method="post">
+
+    <div class="row">
+        <div class="col-lg-6">
+            <label>Araba Modeli</label>
+            <input type="text" asp-for="ModelName" class="form-control" />
+            <br />
+            <label>Araba Görseli</label>
+            <input type="text" asp-for="ImageUrl" class="form-control" />
+            <br />
+            <label>Model Yılı</label>
+            <input type="number" asp-for="Year" class="form-control" />
+            <br />
+            <label>Kiralama Bedeli</label>
+            <input type="number" asp-for="Price" class="form-control" />
+            <br />
+            <label>Koltuk Sayısı</label>
+            <input type="number" asp-for="SeatCount" class="form-control" />
+            <br />
+        </div>
+        <div class="col-lg-6">
+            <label>Kilometre Bilgisi</label>
+            <input type="number" asp-for="Kilometer" class="form-control" />
+            <br />
+            <label>Marka</label>
+            <select asp-items="@ViewBag.brands" asp-for="BrandId" class="form-control">
+                <option>Markayı Seçiniz</option>
+            </select>
+            <br />
+            <label>Yakıt Türü</label>
+            <select asp-items="@ViewBag.gasTypes" asp-for="GasType" class="form-control">
+                <option>Yakıt Türünü Seçiniz</option>
+            </select>
+            <br />
+            <label>Vites Türü</label>
+            <select asp-items="@ViewBag.gearTypes" asp-for="GearType" class="form-control">
+                <option>Vites Türünü Seçiniz</option>
+            </select>
+            <br />
+            <label>Vites Özelliği</label>
+            <select asp-items="@ViewBag.transmissions" asp-for="Transmission" class="form-control">
+                <option>Vites Özelliğini Seçiniz</option>
+            </select>
+            <br />
+        </div>
+
+        <button class="btn btn-outline-dark">Kaydet</button>
+    </div>
+
+
+
+   
+  
+   
+</form>
