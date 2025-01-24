@@ -19,8 +19,8 @@ namespace Cental.EntityLayer.Entities
         public string Transmission { get; set; }
         public int Kilometer { get; set; }
         public int BrandId { get; set; }
-        public Brand Brand { get; set; } //navigation property
-        public List<Review> Reviews { get; set; }
+        public virtual Brand Brand { get; set; } //navigation property
+        public virtual List<Review> Reviews { get; set; }
 
     }
 }
