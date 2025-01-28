@@ -1,6 +1,6 @@
 ﻿
 @*
-   _AdminLayoutNavbarComponent
+   _AdminLayoutSidebarComponent
 *@
 
 <nav class="pcoded-navbar  ">
@@ -9,17 +9,17 @@
 
 			<div class="">
 				<div class="main-menu-header">
-					<img class="img-radius" src="~/flat-able-admin/dist/assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
+					<img src="@ViewBag.userImage" alt="User-Profile-Image" style="border-radius:50%;height:50px;width:50px">
 					<div class="user-details">
-						<span>John Doe</span>
+						<span>@ViewBag.nameSurname</span>
 						<div id="more-details">Admin<i class="fa fa-chevron-down m-l-5"></i></div>
 					</div>
 				</div>
 				<div class="collapse" id="nav-user-link">
 					<ul class="list-unstyled">
-						<li class="list-group-item"><a href="#"><i class="feather icon-user m-r-5"></i>Profil Bilgileri</a></li>
-						<li class="list-group-item"><a href="#"><i class="feather icon-settings m-r-5"></i>Siteye Git</a></li>
-						<li class="list-group-item"><a href="#"><i class="feather icon-log-out m-r-5"></i>Çıkış Yap</a></li>
+						<li class="list-group-item"><a href="/AdminProfile/Index"><i class="feather icon-user m-r-5"></i>Profil Bilgileri</a></li>
+						<li class="list-group-item"><a href="/Default/Index"><i class="feather icon-settings m-r-5"></i>Siteye Git</a></li>
+						<li class="list-group-item"><a href="/Login/Logout"><i class="feather icon-log-out m-r-5"></i>Çıkış Yap</a></li>
 					</ul>
 				</div>
 			</div>
