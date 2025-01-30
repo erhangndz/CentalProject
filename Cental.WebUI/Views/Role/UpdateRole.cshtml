@@ -1,0 +1,23 @@
+﻿@model UpdateRoleDto
+@{
+    ViewData["Title"] = "Rol Güncelleme";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+    <label>Rol Adı</label>
+    <input asp-for="Name" class="form-control" />
+    <br />
+
+    <p style="color:red">
+        @Html.ValidationSummary()
+    </p>
+
+
+    <button class="btn btn-outline-dark">Güncelle</button>
+
+</form>
+
