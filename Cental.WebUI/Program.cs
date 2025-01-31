@@ -10,7 +10,10 @@ using Cental.EntityLayer.Entities;
 using Cental.WebUI.Mappings;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using NuGet.Protocol.Plugins;
+using System;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -46,6 +49,7 @@ builder.Services.ConfigureApplicationCookie(config =>
 {
     config.LoginPath = "/Login/Index";
     config.LogoutPath = "/Login/Logout";
+    config.AccessDeniedPath = "/ErrorPage/AccessDenied";
     
 });
 
@@ -63,6 +67,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseStatusCodePagesWithReExecute("/ErrorPage/NotFound404");
 
 app.UseRouting();
 app.UseAuthentication(); //sistemde kayýtlý mý deðil mi ? 
@@ -71,5 +76,7 @@ app.UseAuthorization();  //yetkisi var mý ?
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
 
 app.Run();

@@ -1,10 +1,12 @@
 ﻿using Cental.BusinessLayer.Abstract;
 using Cental.EntityLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
 
 namespace Cental.WebUI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminBrandController(IBrandService _brandService) : Controller
     {
         public IActionResult Index()

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "NotFound404";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+
+<!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">404 Sayfa Bulunamadı</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="/Default/Index">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item"><a href="#">Hata Sayfası</a></li>
+                    <li class="breadcrumb-item active text-primary">404</li>
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- 403 Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
+                        <h1 class="display-1">404</h1>
+                        <h1 class="mb-4">Görünüşe göre kayboldunuz</h1>
+                        <p class="mb-4">Ulaşmaya çalıştığınız sayfa yerinde yok 😊 </p>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="/Default/Index">Ana Sayfaya Dön</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 403 End -->
