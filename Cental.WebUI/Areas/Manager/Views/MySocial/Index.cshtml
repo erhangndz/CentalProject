@@ -1,0 +1,33 @@
+﻿@model List<ResultUserSocialDto>
+@{
+    ViewData["Title"] = "Sosyal Medyalarım";
+    Layout = "~/Areas/Manager/Views/ManagerLayout/Index.cshtml";
+}
+
+@{
+    int count = 0;
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Sosyal Medya</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>
+                <a href="@item.SocialMediaUrl" target="_blank"><i class="@item.Icon"></i>@item.Title</a>
+            </td>
+
+            <td><a asp-action="DeleteUserSocial" asp-route-id="@item.UserSocialId" class="btn btn-danger">Sil</a> </td>
+            <td><a asp-action="UpdateUserSocial" asp-route-id="@item.UserSocialId" class="btn btn-info">Güncelle</a> </td>
+        </tr>
+    }
+</table>
+
+<a asp-action="CreateUserSocial" asp-controller="MySocial" class="btn btn-primary">Yeni Sosyal Medya Ekle</a>
