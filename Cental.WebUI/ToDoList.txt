@@ -5,9 +5,7 @@ User Paneli içinde araç kiralama durumlarını görecek.
 
 Loginde giriş yaptığımızda kullanıcının rolüne göre panele yönlendirme
 
-SweetAlert 
 
-Sayfalama 
 
 Filtreleyerek Araçları getirme 
 
