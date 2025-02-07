@@ -4,13 +4,13 @@
 *@
 
 
-<form class="filter-form" asp-action="FilterCars" asp-controller="Cars" method="post">
+<form class="filter-form mb-4" asp-action="FilterCars" asp-controller="Cars" method="post">
     <div class="container mt-4">
         <div class="row g-3">
             <div class="col-md-3">
                 <div class="form-group">
-                    <select class="form-control" asp-items="@ViewBag.cars" name="car">
-                        <option selected disabled>Araç Seçin</option>
+                    <select class="form-control" asp-items="@ViewBag.brands" name="brand">
+                        <option selected disabled>Marka Seçin</option>
 
                     </select>
                 </div>
@@ -31,11 +31,11 @@
                     </select>
                 </div>
             </div>
-           @*  <div class="col-md-2">
+            <div class="col-md-2">
                 <div class="form-group">
                     <input type="number" name="year" class="form-control" placeholder="En Düşük Model Yılı">
                 </div>
-            </div> *@
+            </div>
             <div class="col-md-1 d-flex align-items-center">
                 <button class="btn btn-danger w-100" type="submit">Filtrele</button>
             </div>

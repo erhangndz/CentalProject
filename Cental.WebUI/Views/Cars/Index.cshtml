@@ -18,58 +18,40 @@
 
         @await Component.InvokeAsync("_CarFilterCars")
 
-        <div class="categories-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@item.ImageUrl" class="card-img-top" alt="@item.Brand.BrandName @item.ModelName">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Brand.BrandName @item.ModelName</h5>
+                                <p class="text-muted">Puanı: @(item.Reviews.Any() ? item.Reviews.Average(x => x.Rating) : "Değerlendirilmedi")</p>
 
-            @foreach (var item in Model)
-            {
-                
-            <div class="categories-item p-4">
-                <div class="categories-item-inner">
-                    <div class="categories-img rounded-top">
-                        <img src="@item.ImageUrl" class="img-fluid w-100 rounded-top" alt="">
+                                <h4 class="text-primary">@item.Price ₺ / Günlük</h4>
+
+                                <div class="d-flex justify-content-between text-secondary my-3">
+                                    <span><i class="fa fa-users"></i> @item.SeatCount Koltuk</span>
+                                    <span><i class="fa fa-car"></i> @item.Transmission</span>
+                                    <span><i class="fa fa-gas-pump"></i> @item.GasType</span>
+                                </div>
+
+                                <div class="d-flex justify-content-between text-secondary">
+                                    <span><i class="fa fa-calendar"></i> @item.Year</span>
+                                    <span><i class="fa fa-cogs"></i> @item.GearType</span>
+                                    <span><i class="fa fa-road"></i> @item.Kilometer km</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <a href="/Default/Index" class="btn btn-primary w-100 rounded-pill">Hemen Kirala</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="categories-content rounded-bottom p-4">
-                        <h4>@item.Brand.BrandName @item.ModelName</h4>
-                        <div class="categories-review mb-4">
-                            <div class="me-3">Puanı: @(item.Reviews.Any() ?  item.Reviews.Average(x=>x.Rating): "Değerlendirilmedi")</div>
-                            <div class="d-flex justify-content-center text-secondary">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star text-body"></i>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">@item.Price ₺/Günlük</h4>
-                        </div>
-                        <div class="row gy-2 gx-0 text-center mb-4">
-                            <div class="col-4 border-end border-white">
-                                <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">@item.SeatCount Koltuk</span>
-                            </div>
-                            <div class="col-4 border-end border-white">
-                                <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">@item.Transmission</span>
-                            </div>
-                            <div class="col-4">
-                                <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">@item.GasType</span>
-                            </div>
-                            <div class="col-4 border-end border-white">
-                                <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">@item.Year</span>
-                            </div>
-                            <div class="col-4 border-end border-white">
-                                <i class="fa fa-cogs text-dark"></i> <span class="text-body ms-1">@item.GearType</span>
-                            </div>
-                            <div class="col-4">
-                                <i class="fa fa-road text-dark"></i> <span class="text-body ms-1">@item.Kilometer km</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
-                    </div>
-                </div>
+                }
             </div>
-            }
-            
         </div>
+
     </div>
 </div>
 <!-- Car categories End -->

@@ -1,11 +1,12 @@
-﻿@model List<Brand>
+﻿@using PagedList.Core
+@model PagedList<Brand>
 @{
     ViewData["Title"] = "Markalar";
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 
 @{
-    int count = 0 ; 
+    int count = Model.PageSize * Model.PageNumber- (Model.PageSize) ; 
 }
 <table class="table table-bordered">
     <tr>
@@ -24,6 +25,12 @@
             <td><a asp-action="UpdateBrand" asp-route-id="@item.BrandId" class="btn btn-info"><i class="fa fa-pen"></i>  </a> </td>
         </tr>
     }
+    
+
 </table>
+
+<div class="text-center">
+    <pager asp-action="Index" asp-controller="AdminBrand" list="@Model" ></pager>
+</div>
 
 <a asp-action="CreateBrand" asp-controller="AdminBrand" class="btn btn-primary"><i class="fa fa-plus-circle" ></i>  Yeni Marka Ekle</a>
